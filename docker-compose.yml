@@ -1,0 +1,20 @@
+eureka-server:
+  image: microservice/eureka-server
+  hostname: eureka-server
+  ports:
+    - "8761:8761"
+
+service-b:
+  image:  microservice/service-b
+  ports:
+    - "8070:8070"
+  links:
+    - "eureka-server"
+
+service-a:
+  image:  microservice/service-a
+  ports:
+    - "8080:8080"
+  links:
+    - "eureka-server"
+    - "service-b"

@@ -1,0 +1,6 @@
+spring.application.name: compute-client
+#\u914D\u7F6E\u6587\u4EF6\u6240\u5728\u5206\u652F
+spring.cloud.config.label: master
+spring.cloud.config.profile: dev
+#\u914D\u7F6E\u670D\u52A1\u4E2D\u5FC3
+spring.cloud.config.uri: http://localhost:8040/
