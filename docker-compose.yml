@@ -1,20 +1,39 @@
-eureka-server:
-  image: microservice/eureka-server
-  hostname: eureka-server
-  ports:
-    - "8761:8761"
+version: '2'
 
-service-b:
-  image:  microservice/service-b
-  ports:
-    - "8070:8070"
-  links:
-    - "eureka-server"
+services:
 
-service-a:
-  image:  microservice/service-a
-  ports:
-    - "8080:8080"
-  links:
-    - "eureka-server"
-    - "service-b"
+   eureka-server:
+     image: microservice-eureka-demo
+     hostname: eureka-server
+     ports:
+       - "8761:8761"
+
+   config-service:
+     image:  microservice-config-demo
+     ports:
+       - "8040:8040"
+
+   service-a:
+     image:  microservice-provider-demo
+     links:
+       - "eureka-server"
+       - "config-service"
+
+
+   service-b:
+     image:  microservice-provider2-demo
+     links:
+       - "eureka-server"
+       - "config-service"
+
+
+
+   client-service:
+     image:  microservice-client-demo
+     ports:
+       - "8765:8765"
+     links:
+       - "eureka-server"
+       - "config-service"
+       - "service-b"
+       - "service-a"

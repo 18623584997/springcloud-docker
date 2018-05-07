@@ -36,7 +36,7 @@
         <configuration>
           <!-- 注意imageName一定要是符合正则[a-z0-9-_.]的，否则构建不会成功 -->
           <!-- 详见：https://github.com/spotify/docker-maven-plugin    Invalid repository name ... only [a-z0-9-_.] are allowed-->
-          <imageName>microservice-provider2-demo</imageName>
+          <imageName>microservice-provider-demo</imageName>
           <baseImage>dahu/javaweb:0.1</baseImage>
           <dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
           <!--<entryPoint>["java", "-jar", "${project.build.finalName}.jar"]</entryPoint>-->
