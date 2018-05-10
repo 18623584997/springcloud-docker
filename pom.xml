@@ -37,6 +37,7 @@
     <module>config</module>
     <module>configClient</module>
     <module>es</module>
+    <module>swagger2</module>
   </modules>
 
 
