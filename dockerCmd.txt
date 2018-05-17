@@ -1,0 +1,78 @@
+docker run -i -t -v /var/local/:/var/local/ 688353a31fde /bin/bash
+
+
+docker run -i -t -v /var/local/:/var/local/ 688353a31fde /bin/bash
+
+docker run -i -t  dahu/javaweb:0.1   -p 8761:8761 /bin/bash 
+
+docker run -itd -p 8761:8761  microservice-eureka-demo:latest     /bin/bash
+
+docker run -itd -p 8765:8765  microservice-client-demo:latest     /bin/bash
+
+
+
+docker run -it -p 8764:8764  microservice-provider-demo:latest     /bin/bash
+docker run -it  microservice-provider-demo:latest     /bin/bash
+
+
+docker run -it  microservice-provider2-demo:latest     /bin/bash
+
+
+docker run -itd -p 8040:8040  microservice-config-demo:latest     /bin/bash
+
+export JAVA_HOME=/usr/lib/jvm/java
+
+export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/jre/lib/rt.jar
+
+export PATH=$PATH:$JAVA_HOME/bin
+
+
+
+docker commit 46388bb1108b dahu/javaweb:0.1
+
+
+mvn clean package docker:build -DskipTests
+
+docker rm $(docker ps -aq)
+
+
+docker rm $(docker ps -aq)
+
+
+yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+
+
+docker exec -i -t  55d88ed76311 /bin/bash
+
+
+http://192.168.45.250/weibo/index.php?app=public&mod=Passport&act=login
+
+docker inspect --format '{{ .NetworkSettings.IPAddress }}' 46388bb1108b
+
+docker inspect efcb34870bd7
+
+
+
+http://127.0.0.1:8597/wholesale/shop/search.htm
+
+page:1
+keyword:¾Æ
+levelOneCategoryCode:
+levelTwoCategoryCode:
+levelThirdCategoryCode:
+brandCodes:
+priceBetween:
+supplierUserId:
+orderByDisplayWeightValue:
+isShowOnlyHave:
+isShowWholesale:Y
+showProductRole:
+isShowSelf:
+minPrice:
+maxPrice
+
+
+isPC:false
+username:18523650003
+password:111111aa
+/wholesale/shop/product/mobileProductList.htm?purchaseProductLikeName=ÍÞ¹þ¹þ&isShowWholesale=Y&showProductRole=SELF_SELLER
