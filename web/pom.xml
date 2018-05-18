@@ -9,17 +9,38 @@
   <modelVersion>4.0.0</modelVersion>
   <artifactId>web</artifactId>
   <packaging>war</packaging>
-  <name>web Maven Webapp</name>
+  <name>web</name>
   <url>http://maven.apache.org</url>
   <dependencies>
+
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
+      <groupId>org.jasig.cas</groupId>
+      <artifactId>cas-server-webapp</artifactId>
+      <version>4.0.3</version>
+      <type>war</type>
+      <!--<scope>runtime</scope>-->
     </dependency>
+
+
+
   </dependencies>
   <build>
-    <finalName>web</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>2.1.1</version>
+        <configuration>
+          <overlays>
+            <overlay>
+              <groupId>org.jasig.cas</groupId>
+              <artifactId>cas-server-webapp</artifactId>
+            </overlay>
+          </overlays>
+        </configuration>
+      </plugin>
+
+
+    </plugins>
   </build>
 </project>
