@@ -6,4 +6,7 @@ keytool -list  -rfc -keystore d:/keystore/lesaas.keystore  -storepass 123456
 keytool -export -alias www.dahu.cn -keystore XXX.jks -file cas.cer
 keytool -exportcert -alias www.dahu.cn -keystore d:/keystore/lesaas.keystore -file d:/keystore/lesaas.cer
 
-keytool -importcert -trustcacerts -alias www.dahu.cn -file lesaas.cer -keystore lesaas.keystore
+keytool -import -trustcacerts -alias www.dahu.cn -file d:/xcx/lesaas.cer -keystore d:/keystore/lesaas.keystore
+
+
+keytool -import -alias cacerts -keystore cacerts -file d:/xcx/lesaas.cer

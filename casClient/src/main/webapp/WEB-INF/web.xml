@@ -11,12 +11,12 @@
     <init-param>
       <!--casServerLoginUrl:cas服务的登陆url -->
       <param-name>casServerLoginUrl</param-name>
-      <param-value>http://127.0.0.1:8080/server/cas/login</param-value>
+      <param-value>https://www.dahu.cn:8443/cas/login</param-value>
     </init-param>
     <init-param>
       <!--serverName:本项目的ip+port -->
       <param-name>serverName</param-name>
-      <param-value>http://localhost:8080/client</param-value>
+      <param-value>http://localhost:8081/client</param-value>
     </init-param>
     <init-param>
       <param-name>useSession</param-name>
@@ -47,14 +47,14 @@
     </filter-class>
     <init-param>
       <param-name>casServerUrlPrefix</param-name>
-      <param-value>http://localhost:8080/server/</param-value>
+      <param-value>https://www.dahu.cn:8443/cas/</param-value>
     </init-param>
 
 
     <init-param>
       <!--这里的service  为提交的service  这里其实就是提交到你未配置cas的时候，在session 中放入username的地方。-->
       <param-name>serverName</param-name>
-      <param-value>http://localhost:8080/client</param-value>
+      <param-value>http://localhost:8081/client</param-value>
     </init-param>
   </filter>
   <filter-mapping>
