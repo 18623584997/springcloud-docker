@@ -1,0 +1,41 @@
+问题出现环境，OS版本：CentOS-7-x86_64-Minimal-1708；ES版本：elasticsearch-6.2.2。
+
+1、max file descriptors [4096] for elasticsearch process is too low, increase to at least [65536]
+
+　　每个进程最大同时打开文件数太小，可通过下面2个命令查看当前数量
+
+ulimit -Hn
+ulimit -Sn
+
+
+
+修改/etc/security/limits.conf文件，增加配置，用户退出后重新登录生效
+
+*               soft    nofile          65536
+*               hard    nofile          65536
+
+
+
+2、max number of threads [3818] for user [es] is too low, increase to at least [4096]
+
+　　问题同上，最大线程个数太低。修改配置文件/etc/security/limits.conf，增加配置
+
+1
+2
+*               soft    nproc           4096
+*               hard    nproc           4096
+　　可通过命令查看
+
+ulimit -Hu
+ulimit -Su
+
+
+
+
+3、max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
+
+　　修改/etc/sysctl.conf文件，增加配置vm.max_map_count=262144
+
+vi /etc/sysctl.conf
+sysctl -p
+　　执行命令sysctl -p生效
