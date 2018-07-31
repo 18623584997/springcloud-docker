@@ -1,0 +1,7 @@
+解决办法就是新建用户并授权
+
+新建test用户，授予administrator权限
+
+rabbitmqctl add_user test root
+rabbitmqctl set_user_tags test administrator
+rabbitmqctl set_permissions -p / test ".*" ".*" ".*"

@@ -9,4 +9,4 @@ keytool -exportcert -alias www.dahu.cn -keystore d:/keystore/lesaas.keystore -fi
 keytool -import -trustcacerts -alias www.dahu.cn -file d:/xcx/lesaas.cer -keystore d:/keystore/lesaas.keystore
 
 
-keytool -import -alias cacerts -keystore cacerts -file d:/xcx/lesaas.cer
+keytool -import -alias www.dahu.cnq -keystore cacerts -file d:/xcx/lesaas.cer -storepass changeit
